@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SweetXXorn - Admin Command Center.">
+  <title>SweetXXorn | Admin Headquarters</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Entire Website Dual GIF Background -->
+  <div class="site-wide-gif-bg">
+    <div class="site-wide-gif-left" style="background-image: url('redvid_io_porn_porn_porn_💖😵_💫💖.gif');"></div>
+    <div class="site-wide-gif-right" style="background-image: url('redvid_io_porn_porn_porn_💖😵_💫💖 (1).gif');"></div>
+  </div>
+
+  <!-- Announcement Banner -->
+  <div id="announcement-bar">
+    <span id="announcement-text">✨ Welcome to SweetXXorn Premium Streaming! Upgrade to VIP for unlimited access.</span>
+    <span class="close-ann-btn"
+      onclick="document.getElementById('announcement-bar').style.display='none'">&times;</span>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <nav id="main-navbar">
+    <div class="nav-brand">
+      <button class="dots-toggle-btn" id="sidebar-toggle-btn" title="Open Menu">
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+      </button>
+      <a href="index.html">
+        <i class="fa-solid fa-gem text-gold-gradient"></i>
+        <span>SweetXXorn</span>
+      </a>
+    </div>
+
+    <!-- Live Search Bar -->
+    <div class="nav-search">
+      <input type="text" id="global-search-input" placeholder="Search premium titles, genres, tags...">
+      <button id="global-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="nav-links" id="navbar-links">
+      <a href="index.html">Home</a>
+      <select id="currency-selector">
+        <option value="USD">USD ($)</option>
+        <option value="INR">INR (₹)</option>
+      </select>
+
+      <!-- User Dynamic Actions -->
+      <div id="auth-nav-container">
+        <a href="login.html" class="btn btn-primary" id="navbar-login-btn">Login / VIP</a>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Burger Toggle -->
+    <div class="mobile-toggle" id="mobile-menu-toggle">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- ==================================================== -->
+  <!-- ADMIN PANEL DASHBOARD VIEW                           -->
+  <!-- ==================================================== -->
+  <main id="admin-dashboard-view" class="dashboard-wrapper" style="display: block;">
+    <div class="flex-between mb-3">
+      <h1 class="text-gold-gradient font-luxury">Admin Headquarters</h1>
+      <button class="btn btn-secondary" id="admin-logout-btn"><i class="fa-solid fa-right-from-bracket"></i>
+        Logout</button>
+    </div>
+    <div class="dashboard-grid">
+      <!-- Sidebar Options -->
+      <div class="dashboard-sidebar" id="admin-sidebar-controls">
+        <button class="sidebar-btn active" data-target="admin-analytics-panel">
+          <i class="fa-solid fa-chart-line"></i> Analytics Overview
+        </button>
+        <button class="sidebar-btn" data-target="admin-videos-panel">
+          <i class="fa-solid fa-film"></i> Manage Videos
+        </button>
+        <button class="sidebar-btn" data-target="admin-categories-panel">
+          <i class="fa-solid fa-tags"></i> Categories CRUD
+        </button>
+        <button class="sidebar-btn" data-target="admin-plans-panel">
+          <i class="fa-solid fa-sliders"></i> Subscription Config
+        </button>
+        <button class="sidebar-btn" data-target="admin-payments-panel">
+          <i class="fa-solid fa-receipt"></i> Global Payments Ledger
+        </button>
+        <button class="sidebar-btn" data-target="admin-announcements-panel">
+          <i class="fa-solid fa-bullhorn"></i> Announcements Banner
+        </button>
+        <button class="sidebar-btn" data-target="admin-settings-panel">
+          <i class="fa-solid fa-gears"></i> Credentials & APIs
+        </button>
+      </div>
+
+      <!-- Tab Content cards -->
+      <div class="dashboard-content" id="admin-tab-contents">
+        <!-- Analytics Panel -->
+        <div class="dashboard-content-panel active" id="admin-analytics-panel">
+          <div class="stats-cards-row">
+            <div class="stat-card glass-panel">
+              <p class="stat-card-title">Total Streams Played</p>
+              <h2 class="stat-card-value" id="stat-total-views">0</h2>
+            </div>
+            <div class="stat-card glass-panel">
+              <p class="stat-card-title">VIP Subscriptions</p>
+              <h2 class="stat-card-value" id="stat-active-subs">0</h2>
+            </div>
+            <div class="stat-card glass-panel">
+              <p class="stat-card-title">Total Revenue</p>
+              <h2 class="stat-card-value" id="stat-total-revenue">$0.00</h2>
+            </div>
+            <div class="stat-card glass-panel">
+              <p class="stat-card-title">Registered Users</p>
+              <h2 class="stat-card-value" id="stat-total-users">0</h2>
+            </div>
+          </div>
+          <!-- Custom SVG Animated charts -->
+          <div class="chart-box glass-panel">
+            <h3 class="mb-3 font-luxury text-gold-gradient">Weekly Stream Traffic</h3>
+            <svg class="svg-chart" viewBox="0 0 500 150">
+              <polyline fill="none" stroke="url(#gold-gradient-def)" stroke-width="4"
+                points="20,130 100,90 180,110 260,50 340,70 420,30 480,45" />
+              <circle cx="20" cy="130" r="5" fill="#ff6b00" />
+              <circle cx="100" cy="90" r="5" fill="#ff6b00" />
+              <circle cx="180" cy="110" r="5" fill="#ff6b00" />
+              <circle cx="260" cy="50" r="5" fill="#ff6b00" />
+              <circle cx="340" cy="70" r="5" fill="#ff6b00" />
+              <circle cx="420" cy="30" r="5" fill="#ff6b00" />
+              <circle cx="480" cy="45" r="5" fill="#ff6b00" />
+              <defs>
+                <linearGradient id="gold-gradient-def" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#fed7aa" />
+                  <stop offset="50%" stop-color="#ff6b00" />
+                  <stop offset="100%" stop-color="#ea580c" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Videos panel -->
+        <div class="dashboard-content-panel glass-panel" id="admin-videos-panel" style="padding:25px;">
+          <div class="flex-between mb-3">
+            <h3 class="text-gold-gradient font-luxury">Catalog Library</h3>
+            <button class="btn btn-primary" id="admin-add-video-btn"><i class="fa-solid fa-plus"></i> Upload
+              Video</button>
+          </div>
+          <div class="admin-table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Thumbnail</th>
+                  <th>Title</th>
+                  <th>Category</th>
+                  <th>Access</th>
+                  <th>Preview Limit</th>
+                  <th>Views</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-videos-list">
+                <!-- Loaded via script -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Categories CRUD panel -->
+        <div class="dashboard-content-panel glass-panel" id="admin-categories-panel" style="padding:25px;">
+          <div class="flex-between mb-3">
+            <h3 class="text-gold-gradient font-luxury">Genres & Categories</h3>
+            <form id="admin-add-category-form" style="display:flex; gap:10px; flex-grow:0.5;">
+              <input type="text" id="admin-new-cat-input" class="glass-panel" placeholder="Add Category Name..."
+                style="padding:8px 12px; color:white; border:1px solid var(--glass-border); border-radius:5px; flex-grow:1;"
+                required>
+              <button class="btn btn-primary" type="submit">Add</button>
+            </form>
+          </div>
+          <div class="admin-table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Category ID</th>
+                  <th>Name</th>
+                  <th>Slug Reference</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-categories-list">
+                <!-- Loaded via script -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Plans configuration panel -->
+        <div class="dashboard-content-panel glass-panel" id="admin-plans-panel" style="padding:25px;">
+          <h3 class="mb-3 text-gold-gradient font-luxury">Subscription Pricing Packages</h3>
+          <div class="admin-table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Plan ID</th>
+                  <th>Plan Title</th>
+                  <th>Price</th>
+                  <th>Currency</th>
+                  <th>Duration (Days)</th>
+                  <th>Enabled</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="admin-plans-list">
+                <!-- Loaded dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Payments Ledger -->
+        <div class="dashboard-content-panel glass-panel" id="admin-payments-panel" style="padding:25px;">
+          <h3 class="mb-3 text-gold-gradient font-luxury">Global Transactions Ledger</h3>
+          <div class="admin-table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction ID</th>
+                  <th>User Email</th>
+                  <th>Amount</th>
+                  <th>Gateway</th>
+                  <th>Plan</th>
+                  <th>Date & Time</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="admin-payments-list">
+                <!-- Loaded dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Announcements Panel -->
+        <div class="dashboard-content-panel glass-panel" id="admin-announcements-panel" style="padding:25px;">
+          <div class="flex-between mb-3">
+            <h3 class="text-gold-gradient font-luxury">Top Bar Banner Announcements</h3>
+            <button class="btn btn-primary" id="admin-create-ann-btn"><i class="fa-solid fa-plus"></i> New
+              Announcement</button>
+          </div>
+          <div class="admin-table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Announcement Title</th>
+                  <th>Pinned</th>
+                  <th>Date Created</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-announcements-list">
+                <!-- Loaded dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Credentials & Settings Configuration -->
+        <div class="dashboard-content-panel glass-panel" id="admin-settings-panel" style="padding:25px;">
+          <h3 class="mb-3 text-gold-gradient font-luxury">Platform Security & API Gateways</h3>
+
+          <div class="error-message" id="admin-sett-error"></div>
+          <div class="success-message" id="admin-sett-success"></div>
+
+          <!-- Dynamic Supabase configuration -->
+          <form id="admin-sb-keys-form"
+            style="margin-bottom:30px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:30px;">
+            <h4 class="mb-2 text-gold font-luxury"><i class="fa-solid fa-triangle-exclamation"></i> Dynamic Supabase
+              Config</h4>
+            <p class="text-secondary mb-3" style="font-size:0.85rem;">Input real Supabase credentials below to override
+              the mock LocalStorage engine. Ensure correct database tables and storage buckets are configured in your Supabase project.</p>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+              <div class="form-group">
+                <label>Supabase URL</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-link"></i>
+                  <input type="text" id="sb-url" placeholder="https://your-project.supabase.co" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Supabase Anon Key</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-key"></i>
+                  <input type="text" id="sb-anonKey" placeholder="eyJhbGciOi..." required>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit" style="margin-top:15px;">Link Real Supabase</button>
+            <button class="btn btn-secondary" type="button" id="admin-sb-reset-btn"
+              style="margin-top:15px; margin-left:10px;">Reset to Mock Mode</button>
+          </form>
+
+          <!-- Gateways and general settings -->
+          <form id="admin-payment-gateways-form">
+            <h4 class="mb-2 text-gold font-luxury"><i class="fa-solid fa-credit-card"></i> Payment Gateway Gateways &
+              Keys</h4>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+              <div class="form-group">
+                <label>Stripe Publishable Key</label>
+                <div class="input-wrapper">
+                  <i class="fa-brands fa-stripe"></i>
+                  <input type="text" id="api-stripeKey" placeholder="pk_test_...">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Razorpay Key ID</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-wallet"></i>
+                  <input type="text" id="api-razorpayKey" placeholder="rzp_test_...">
+                </div>
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+              <div class="form-group">
+                <label>PayPal Client ID</label>
+                <div class="input-wrapper">
+                  <i class="fa-brands fa-paypal"></i>
+                  <input type="text" id="api-paypalKey" placeholder="paypal_client_id_...">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Default Payment Gateway</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-sliders"></i>
+                  <select id="api-defaultGateway">
+                    <option value="stripe">Stripe</option>
+                    <option value="razorpay">Razorpay</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="upi">UPI QR Link</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+              <div class="form-group">
+                <label>Tax Surcharge (%)</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-percent"></i>
+                  <input type="number" id="api-taxPercentage" min="0" max="100">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Hero Background Image (URL or Upload)</label>
+                <div class="input-wrapper mb-1">
+                  <i class="fa-solid fa-image"></i>
+                  <input type="text" id="api-heroBgUrl" placeholder="Paste image URL...">
+                </div>
+                <input type="file" id="api-heroBgFile" accept="image/*"
+                  style="font-size:0.8rem; color:var(--text-secondary);">
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Save Settings & Customization</button>
+          </form>
+
+          <!-- Admin password change -->
+          <form id="admin-password-change-form"
+            style="margin-top:30px; border-top:1px solid rgba(255,255,255,0.08); padding-top:30px;">
+            <h4 class="mb-2 text-gold font-luxury"><i class="fa-solid fa-lock"></i> Change Administrative Password</h4>
+            <div class="form-group" style="width:50%;">
+              <label>New Password</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-key"></i>
+                <input type="password" id="admin-new-pass" placeholder="Enter secure admin password..." required>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Update Password</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================================================== -->
+  <!-- GENERAL AUTH OVERLAY MODAL                           -->
+  <!-- ==================================================== -->
+  <div class="modal-overlay" id="auth-modal-overlay">
+    <!-- Login Card -->
+    <div class="modal-container" id="login-modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title font-luxury">SweetXXorn Entry</h3>
+        <button class="modal-close-btn" id="login-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="error-message" id="login-error-msg"></div>
+        <div class="success-message" id="login-success-msg"></div>
+        <form id="login-form">
+          <div class="form-group">
+            <label>Username or Email Address</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="text" id="login-email" placeholder="Enter your email address..." required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" id="login-password" placeholder="Enter account password..." required>
+              <button type="button" class="password-toggle-btn"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="form-links">
+            <a href="#" id="auth-forgot-trigger">Forgot Password?</a>
+            <a href="#" id="auth-signup-trigger">Create Free Account</a>
+          </div>
+          <button class="btn btn-primary" type="submit" style="width:100%;">Sign In</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Registration Card -->
+    <div class="modal-container" id="register-modal-container" style="display:none;">
+      <div class="modal-header">
+        <h3 class="modal-title font-luxury">Establish VIP Identity</h3>
+        <button class="modal-close-btn" id="register-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="error-message" id="register-error-msg"></div>
+        <form id="register-form">
+          <div class="form-group">
+            <label>Choose Display Name</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" id="register-name" placeholder="John Doe" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" id="register-email" placeholder="example@domain.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" id="register-password" placeholder="At least 6 characters" required>
+              <button type="button" class="password-toggle-btn"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="form-links">
+            <a href="#" id="auth-login-trigger">Already registered? Sign In</a>
+          </div>
+          <button class="btn btn-primary" type="submit" style="width:100%;">Create Account</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Forgot Password Card -->
+    <div class="modal-container" id="forgot-modal-container" style="display:none;">
+      <div class="modal-header">
+        <h3 class="modal-title font-luxury">Access Recovery</h3>
+        <button class="modal-close-btn" id="forgot-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="error-message" id="forgot-error-msg"></div>
+        <div class="success-message" id="forgot-success-msg"></div>
+        <form id="forgot-form">
+          <p class="text-secondary mb-3" style="font-size:0.85rem;">Specify your email address below. We'll send
+            instructions to reset your password securely.</p>
+          <div class="form-group">
+            <label>Email Address</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" id="forgot-email" placeholder="example@domain.com" required>
+            </div>
+          </div>
+          <div class="form-links">
+            <a href="#" id="forgot-back-login-trigger">Back to Login</a>
+          </div>
+          <button class="btn btn-primary" type="submit" style="width:100%;">Send Verification Link</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================================================== -->
+  <!-- ADMIN PANEL VIDEO UPLOADER MODAL                     -->
+  <!-- ==================================================== -->
+  <div class="modal-overlay" id="upload-video-modal-overlay">
+    <div class="modal-container" style="max-width: 600px;">
+      <div class="modal-header">
+        <h3 class="modal-title font-luxury text-gold-gradient" id="video-upload-modal-title">Upload Video Stream</h3>
+        <button class="modal-close-btn" id="upload-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="error-message" id="upload-error"></div>
+
+        <form id="admin-upload-video-form">
+          <input type="hidden" id="upload-video-id">
+
+          <div class="form-group">
+            <label>Video Stream Title</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-heading"></i>
+              <input type="text" id="upload-title" placeholder="Ex. Neon Cyberpunk Suite" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Detailed Stream Description</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-align-left"></i>
+              <textarea id="upload-desc" placeholder="Provide description..." required></textarea>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+            <div class="form-group">
+              <label>Access Category</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-tags"></i>
+                <select id="upload-category" required>
+                  <!-- Populated from Db -->
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Premium-Only Lock</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-circle-question"></i>
+                <select id="upload-premiumOnly">
+                  <option value="true">Locked (VIP Subscriber Only)</option>
+                  <option value="false">Free (Everyone Can View)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+            <div class="form-group">
+              <label>Preview Duration (Seconds)</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-stopwatch"></i>
+                <input type="number" id="upload-previewDuration" min="0" max="600" value="10" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Search Tags (Comma separated)</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-hashtag"></i>
+                <input type="text" id="upload-tags" placeholder="gold, luxury, trailer">
+              </div>
+            </div>
+          </div>
+
+          <!-- Video & Thumbnail selection -->
+          <div class="form-group">
+            <label>Thumbnail Image File / Url</label>
+            <div class="input-wrapper mb-1">
+              <i class="fa-solid fa-image"></i>
+              <input type="text" id="upload-thumbnail-url" placeholder="Paste thumbnail URL or select file below...">
+            </div>
+            <input type="file" id="upload-thumbnail-file" accept="image/*"
+              style="font-size:0.8rem; color:var(--text-secondary);">
+          </div>
+
+          <div class="form-group">
+            <label>Video Stream File / Url</label>
+            <div class="input-wrapper mb-1">
+              <i class="fa-solid fa-video"></i>
+              <input type="text" id="upload-video-url" placeholder="Paste video URL or select file below...">
+            </div>
+            <input type="file" id="upload-video-file" accept="video/*"
+              style="font-size:0.8rem; color:var(--text-secondary);">
+          </div>
+
+          <!-- Upload Progress bar -->
+          <div id="upload-progress-box" style="display:none; margin-bottom:20px;">
+            <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:5px;">
+              <span id="upload-progress-status">Uploading files...</span>
+              <span id="upload-progress-pct">0%</span>
+            </div>
+            <div style="width:100%; height:6px; background:rgba(255,255,255,0.1); border-radius:3px;">
+              <div id="upload-progress-bar-fill"
+                style="width:0%; height:100%; background:var(--gold-gradient); border-radius:3px; transition: width 0.1s ease;">
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="submit" style="width:100%;" id="upload-submit-btn">Publish
+            Stream</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================================================== -->
+  <!-- ADMIN PANEL ANNOUNCEMENT CREATOR MODAL               -->
+  <!-- ==================================================== -->
+  <div class="modal-overlay" id="ann-modal-overlay">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title font-luxury text-gold-gradient" id="ann-modal-title">Publish System Announcement</h3>
+        <button class="modal-close-btn" id="ann-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="admin-announcement-form">
+          <input type="hidden" id="ann-id">
+          <div class="form-group">
+            <label>Announcement Title</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-heading"></i>
+              <input type="text" id="ann-title" placeholder="Ex. Premium 4K Upgrades" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Message Content</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-align-left"></i>
+              <textarea id="ann-content" placeholder="Type notification detail message..." required></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Pin Announcement</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-map-pin"></i>
+              <select id="ann-pinned">
+                <option value="true">Yes (Display at top of site)</option>
+                <option value="false">No (Save in notifications list only)</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit" style="width:100%;" id="ann-submit-btn">Publish
+            Notification</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Premium Luxury Footer -->
+  <footer id="premium-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <i class="fa-solid fa-gem text-gold-gradient"></i> <span>SweetXXorn</span>
+      </div>
+      <div class="footer-links">
+        <a href="#" id="footer-terms-btn">Terms & Conditions</a>
+        <a href="#" id="footer-privacy-btn">Privacy Policy</a>
+        <a href="#" id="footer-support-btn">Contact & Support</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 SweetXXorn Cinematic Streaming. Designed for elite view memberships. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>

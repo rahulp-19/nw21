@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SweetXXorn - User Portal. Stream in Ultra HD.">
+  <title>SweetXXorn | My Profile & Invoices</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Entire Website Dual GIF Background -->
+  <div class="site-wide-gif-bg">
+    <div class="site-wide-gif-left" style="background-image: url('redvid_io_porn_porn_porn_💖😵_💫💖.gif');"></div>
+    <div class="site-wide-gif-right" style="background-image: url('redvid_io_porn_porn_porn_💖😵_💫💖 (1).gif');"></div>
+  </div>
+
+  <!-- Announcement Banner -->
+  <div id="announcement-bar">
+    <span id="announcement-text">✨ Welcome to SweetXXorn Premium Streaming! Upgrade to VIP for unlimited access.</span>
+    <span class="close-ann-btn" onclick="document.getElementById('announcement-bar').style.display='none'">&times;</span>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <nav id="main-navbar">
+    <div class="nav-brand">
+      <button class="dots-toggle-btn" id="sidebar-toggle-btn" title="Open Menu">
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+      </button>
+      <a href="index.html">
+        <i class="fa-solid fa-gem text-gold-gradient"></i>
+        <span>SweetXXorn</span>
+      </a>
+    </div>
+
+    <!-- Live Search Bar -->
+    <div class="nav-search">
+      <input type="text" id="global-search-input" placeholder="Search premium titles, genres, tags...">
+      <button id="global-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="nav-links" id="navbar-links">
+      <a href="index.html">Home</a>
+      <select id="currency-selector">
+        <option value="USD">USD ($)</option>
+        <option value="INR">INR (₹)</option>
+      </select>
+      
+      <!-- User Dynamic Actions -->
+      <div id="auth-nav-container">
+        <a href="login.html" class="btn btn-primary" id="navbar-login-btn">Login / VIP</a>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Burger Toggle -->
+    <div class="mobile-toggle" id="mobile-menu-toggle">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- ==================================================== -->
+  <!-- USER DASHBOARD VIEW                                  -->
+  <!-- ==================================================== -->
+  <main id="user-dashboard-view" class="dashboard-wrapper" style="display: block;">
+    <h1 class="mb-3 text-gold-gradient">My Account</h1>
+    <div class="dashboard-grid">
+      <!-- Sidebar Options -->
+      <div class="dashboard-sidebar" id="user-sidebar-controls">
+        <button class="sidebar-btn active" data-target="user-profile-panel">
+          <i class="fa-solid fa-user"></i> Profile Info
+        </button>
+        <button class="sidebar-btn" data-target="user-billing-panel">
+          <i class="fa-solid fa-credit-card"></i> Invoices & Billing
+        </button>
+        <button class="sidebar-btn" data-target="user-security-panel">
+          <i class="fa-solid fa-shield-halved"></i> Password & Security
+        </button>
+      </div>
+
+      <!-- Tab Content Cards -->
+      <div class="dashboard-content" id="user-tab-contents">
+        <!-- Profile Panel -->
+        <div class="dashboard-content-panel active glass-panel user-info-card" id="user-profile-panel">
+          <div class="user-avatar-big" id="user-avatar-initials">U</div>
+          <div>
+            <h3 class="mb-1 text-gold" id="user-dash-name">User Name</h3>
+            <p class="text-secondary mb-2" id="user-dash-email">email@domain.com</p>
+            <div class="sub-status-box glass-panel mt-2">
+              <div>
+                <p class="text-secondary font-luxury" style="font-size:0.75rem;">MEMBERSHIP PLAN</p>
+                <h4 id="user-dash-plan-title">Basic (Free Trial)</h4>
+                <p class="text-secondary mt-1" id="user-dash-plan-expiry">Valid until: N/A</p>
+              </div>
+              <div>
+                <button class="btn btn-primary" id="user-dash-upgrade-btn">Change Plan / VIP</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Billing Panel -->
+        <div class="dashboard-content-panel glass-panel" id="user-billing-panel" style="padding:25px;">
+          <h3 class="mb-3 text-gold-gradient font-luxury">Payment Records</h3>
+          <div class="admin-table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction ID</th>
+                  <th>Gateway</th>
+                  <th>Amount</th>
+                  <th>Plan ID</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody id="user-payments-list">
+                <!-- User Invoices dynamically inserted -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Security Panel -->
+        <div class="dashboard-content-panel glass-panel" id="user-security-panel" style="padding:25px;">
+          <h3 class="mb-3 text-gold-gradient font-luxury">Security settings</h3>
+          <div class="error-message" id="user-sec-error"></div>
+          <div class="success-message" id="user-sec-success"></div>
+          <form id="user-password-change-form">
+            <div class="form-group">
+              <label>New Account Password</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-key"></i>
+                <input type="password" id="user-new-password" placeholder="At least 6 characters" required>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Update Password</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================================================== -->
+  <!-- GENERAL AUTH OVERLAY MODAL                           -->
+  <!-- ==================================================== -->
+  <div class="modal-overlay" id="auth-modal-overlay">
+    <!-- Login Card -->
+    <div class="modal-container" id="login-modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title font-luxury">SweetXXorn Entry</h3>
+        <button class="modal-close-btn" id="login-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="error-message" id="login-error-msg"></div>
+        <div class="success-message" id="login-success-msg"></div>
+        <form id="login-form">
+          <div class="form-group">
+            <label>Username or Email Address</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="text" id="login-email" placeholder="Enter your email address..." required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" id="login-password" placeholder="Enter account password..." required>
+              <button type="button" class="password-toggle-btn"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="form-links">
+            <a href="#" id="auth-forgot-trigger">Forgot Password?</a>
+            <a href="#" id="auth-signup-trigger">Create Free Account</a>
+          </div>
+          <button class="btn btn-primary" type="submit" style="width:100%;">Sign In</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Registration Card -->
+    <div class="modal-container" id="register-modal-container" style="display:none;">
+      <div class="modal-header">
+        <h3 class="modal-title font-luxury">Establish VIP Identity</h3>
+        <button class="modal-close-btn" id="register-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="error-message" id="register-error-msg"></div>
+        <form id="register-form">
+          <div class="form-group">
+            <label>Choose Display Name</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" id="register-name" placeholder="John Doe" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" id="register-email" placeholder="example@domain.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" id="register-password" placeholder="At least 6 characters" required>
+              <button type="button" class="password-toggle-btn"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="form-links">
+            <a href="#" id="auth-login-trigger">Already registered? Sign In</a>
+          </div>
+          <button class="btn btn-primary" type="submit" style="width:100%;">Create Account</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Forgot Password Card -->
+    <div class="modal-container" id="forgot-modal-container" style="display:none;">
+      <div class="modal-header">
+        <h3 class="modal-title font-luxury">Access Recovery</h3>
+        <button class="modal-close-btn" id="forgot-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="error-message" id="forgot-error-msg"></div>
+        <div class="success-message" id="forgot-success-msg"></div>
+        <form id="forgot-form">
+          <p class="text-secondary mb-3" style="font-size:0.85rem;">Specify your email address below. We'll send instructions to reset your password securely.</p>
+          <div class="form-group">
+            <label>Email Address</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" id="forgot-email" placeholder="example@domain.com" required>
+            </div>
+          </div>
+          <div class="form-links">
+            <a href="#" id="forgot-back-login-trigger">Back to Login</a>
+          </div>
+          <button class="btn btn-primary" type="submit" style="width:100%;">Send Verification Link</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================================================== -->
+  <!-- PREMIUM SUBSCRIPTIONS PAYWALL MODAL                   -->
+  <!-- ==================================================== -->
+  <div class="modal-overlay" id="plans-modal-overlay">
+    <div class="modal-container" style="max-width: 900px;">
+      <div class="modal-header">
+        <h3 class="modal-title font-luxury text-gold-gradient"><i class="fa-solid fa-crown"></i> Unlock SweetXXorn Premium Access</h3>
+        <button class="modal-close-btn" id="plans-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="text-secondary text-center mb-3" style="font-size:0.95rem;">Join the elite list of premium stream members. Choose a luxury subscription tier below.</p>
+        <div class="plans-wrapper" id="plans-cards-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================================================== -->
+  <!-- PAYMENT BILLING CHECKOUT MODAL                       -->
+  <!-- ==================================================== -->
+  <div class="modal-overlay" id="checkout-modal-overlay">
+    <div class="modal-container" style="max-width: 550px;">
+      <div class="modal-header">
+        <h3 class="modal-title font-luxury text-gold-gradient">Secure Orange Checkout</h3>
+        <button class="modal-close-btn" id="checkout-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="glass-panel" style="padding:15px; margin-bottom:20px; display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h4 id="checkout-plan-name" class="text-gold">Monthly Orange VIP</h4>
+            <p class="text-secondary" style="font-size:0.8rem;">Duration: <span id="checkout-plan-days">30</span> Days</p>
+          </div>
+          <div style="text-align:right;">
+            <p class="font-luxury" style="font-size:1.4rem; color:white; font-weight:700;" id="checkout-plan-price">$14.99</p>
+            <p class="text-secondary" style="font-size:0.75rem;">Incl. <span id="checkout-tax-rate">18</span>% VAT</p>
+          </div>
+        </div>
+
+        <div class="error-message" id="checkout-error"></div>
+
+        <div class="payment-tabs" id="payment-gateways-tabs">
+          <div class="payment-tab active" data-gateway="card"><i class="fa-solid fa-credit-card"></i> Card</div>
+          <div class="payment-tab" data-gateway="upi"><i class="fa-solid fa-qrcode"></i> UPI QR</div>
+          <div class="payment-tab" data-gateway="paypal"><i class="fa-brands fa-paypal"></i> PayPal</div>
+        </div>
+
+        <div class="payment-tab-content active" id="pay-card-panel">
+          <div class="card-wrapper">
+            <div class="flex-between">
+              <span class="card-logo">SweetXXorn Premium</span>
+              <span id="card-issuer-icon"><i class="fa-brands fa-cc-visa fa-2xl"></i></span>
+            </div>
+            <div class="card-chip"></div>
+            <div class="card-number" id="card-preview-number">•••• •••• •••• ••••</div>
+            <div class="card-meta-row">
+              <div>
+                <p style="font-size:0.6rem; opacity:0.6;">Card Holder</p>
+                <p id="card-preview-holder" style="font-weight:600; letter-spacing:0.5px;">YOUR NAME</p>
+              </div>
+              <div style="text-align:right;">
+                <p style="font-size:0.6rem; opacity:0.6;">Expires</p>
+                <p id="card-preview-expiry" style="font-weight:600;">MM/YY</p>
+              </div>
+            </div>
+          </div>
+
+          <form id="card-checkout-form">
+            <div class="form-group">
+              <label>Name on Card</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="card-name" placeholder="John Doe" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Card Number</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-credit-card"></i>
+                <input type="text" id="card-num" placeholder="4111 2222 3333 4444" maxlength="19" required>
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+              <div class="form-group">
+                <label>Expiration Date</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-calendar"></i>
+                  <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>CVV / CVC Code</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-lock"></i>
+                  <input type="password" id="card-cvv" placeholder="•••" maxlength="3" required>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit" style="width:100%;" id="card-submit-btn">Verify and Authorize Payment</button>
+          </form>
+        </div>
+
+        <div class="payment-tab-content" id="pay-upi-panel">
+          <div class="upi-qr-box">
+            <p class="text-secondary text-center" style="font-size:0.85rem;">Scan this QR code using any UPI App (BHIM, Google Pay, PhonePe, Paytm) to finalize payment instantly.</p>
+            <div class="upi-qr-image" id="upi-qr-container">
+              <i class="fa-solid fa-qrcode fa-5x text-gold"></i>
+            </div>
+            <h4 class="text-gold font-luxury">Amount to pay: <span id="upi-amount-display">₹1199</span></h4>
+            <p class="text-secondary" style="font-size:0.75rem;">ID: sxxornpay@upi</p>
+            <button class="btn btn-primary" id="upi-confirm-btn" style="width:100%;">Confirm Payment After Scanning</button>
+          </div>
+        </div>
+
+        <div class="payment-tab-content" id="pay-paypal-panel">
+          <div style="text-align:center; padding:30px 10px;">
+            <i class="fa-brands fa-paypal fa-5x text-gold mb-3" style="animation: pulse 2s infinite;"></i>
+            <p class="text-secondary mb-3" style="font-size:0.9rem;">You will be redirected to PayPal's secure layout window to finalize your elite streaming credentials.</p>
+            <button class="btn btn-primary" id="paypal-confirm-btn" style="width:100%;"><i class="fa-solid fa-lock"></i> Proceed to PayPal Window</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Premium Luxury Footer -->
+  <footer id="premium-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <i class="fa-solid fa-gem text-gold-gradient"></i> <span>SweetXXorn</span>
+      </div>
+      <div class="footer-links">
+        <a href="#" id="footer-terms-btn">Terms & Conditions</a>
+        <a href="#" id="footer-privacy-btn">Privacy Policy</a>
+        <a href="#" id="footer-support-btn">Contact & Support</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 SweetXXorn Cinematic Streaming. Designed for elite view memberships. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
